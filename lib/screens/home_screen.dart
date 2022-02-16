@@ -99,7 +99,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ),
           ],
           bottom: PreferredSize(
-            preferredSize: const Size.fromHeight(60),
+            preferredSize: const Size.fromHeight(50),
             child: Align(
               alignment: Alignment.centerLeft,
               child: TabBar(

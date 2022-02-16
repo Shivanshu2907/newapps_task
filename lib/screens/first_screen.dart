@@ -100,34 +100,34 @@ class _FirstScreenState extends State<FirstScreen>
           height: 20,
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.06,
+          height: MediaQuery.of(context).size.height * 0.057,
           child: ListView.builder(
             shrinkWrap: true,
             itemCount: _list.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (_, i) {
               return SizedBox(
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: MediaQuery.of(context).size.width * 0.25,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: GestureDetector(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: _selected[i] ? const Color(0xFFFC7568) : null,
+                          color: _selected[i]
+                              ? const Color(0xFFFC7568)
+                              : Colors.white,
                           borderRadius: const BorderRadius.all(
                             Radius.circular(10),
                           ),
-                          boxShadow: _selected[i]
-                              ? const [
-                                  BoxShadow(
-                                    color: Color(0xFFC9D8F1),
-                                    blurRadius: 2.0,
-                                    spreadRadius: 0.0,
-                                    offset: Offset(2.0,
-                                        2.0), // shadow direction: bottom right
-                                  )
-                                ]
-                              : null,
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color(0xFFC9D8F1),
+                              blurRadius: 2.0,
+                              spreadRadius: 0.0,
+                              offset: Offset(
+                                  2.0, 2.0), // shadow direction: bottom right
+                            )
+                          ],
                         ),
                         child: Center(
                           child: lightText.getText(
@@ -153,7 +153,7 @@ class _FirstScreenState extends State<FirstScreen>
           child: ListView.builder(
             itemCount: _titles.length,
             itemBuilder: (BuildContext context, int index) {
-              return lstItem(context, index);
+              return Center(child: lstItem(context, index));
             },
           ),
         )
@@ -165,7 +165,7 @@ class _FirstScreenState extends State<FirstScreen>
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return Padding(
-      padding: const EdgeInsets.fromLTRB(15, 0, 15, 15),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
       child: GestureDetector(
         onTap: () => Navigator.push(
           context,
@@ -179,8 +179,8 @@ class _FirstScreenState extends State<FirstScreen>
           ),
         ),
         child: Container(
-          height: height * 0.18,
-          width: width * 0.8,
+          height: height * 0.17,
+          width: width * 0.9,
           child: Stack(
             children: <Widget>[
               Positioned(
@@ -202,7 +202,7 @@ class _FirstScreenState extends State<FirstScreen>
                       )
                     ],
                   ),
-                  width: width * 0.9,
+                  width: width * 0.86,
                   height: height * 0.12,
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
@@ -241,8 +241,8 @@ class _FirstScreenState extends State<FirstScreen>
                       Radius.circular(20),
                     ),
                   ),
-                  width: width * 0.25,
-                  height: height * 0.16,
+                  width: width * 0.23,
+                  height: height * 0.15,
                   child: Image.asset(
                     _images[i],
                     fit: BoxFit.fill,

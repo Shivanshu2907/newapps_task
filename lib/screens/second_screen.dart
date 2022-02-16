@@ -38,13 +38,13 @@ class SecondScreen extends StatelessWidget {
         Positioned(
           bottom: 0,
           child: Container(
-            height: height * .7,
+            height: height * .75,
             width: width,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                topRight: Radius.circular(50),
-                topLeft: Radius.circular(50),
+                topRight: Radius.circular(45),
+                topLeft: Radius.circular(45),
               ),
             ),
             child: Column(
@@ -121,7 +121,10 @@ class SecondScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    boldText.getText("Cast & Crew", 17),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 90, 0),
+                      child: boldText.getText("Cast & Crew", 17),
+                    ),
                     lightText.getText(
                       string: "View all",
                       size: 13,
@@ -130,7 +133,7 @@ class SecondScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -213,7 +216,7 @@ class SecondScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 25,
+                  height: 50,
                 ),
                 GestureDetector(
                   onTap: () {},
@@ -251,8 +254,8 @@ class SecondScreen extends StatelessWidget {
           ),
         ),
         Positioned(
-          left: width * 0.13,
-          top: height * 0.24,
+          left: width * 0.11,
+          top: height * 0.194,
           child: Container(
             clipBehavior: Clip.antiAlias,
             decoration: const BoxDecoration(
@@ -286,9 +289,12 @@ class SecondScreen extends StatelessWidget {
               width: 28,
               height: 28,
               child: const Center(
-                child: Icon(
-                  Icons.arrow_back_ios,
-                  color: Color(0xFFFC7568),
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
+                  child: Icon(
+                    Icons.arrow_back_ios,
+                    color: Color(0xFFFC7568),
+                  ),
                 ),
               ),
             ),
@@ -309,7 +315,7 @@ class SecondScreen extends StatelessWidget {
             height: 28,
             child: const Center(
               child: Icon(
-                Icons.bookmark,
+                Icons.bookmark_outline,
                 color: Color(0xFFFC7568),
               ),
             ),
@@ -317,7 +323,7 @@ class SecondScreen extends StatelessWidget {
         ),
         Positioned(
           right: width * 0.07,
-          top: height * 0.24,
+          top: height * 0.201,
           child: Container(
             clipBehavior: Clip.antiAlias,
             decoration: const BoxDecoration(
